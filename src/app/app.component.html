@@ -1,2 +1,40 @@
-
-<p>currency converter app</p>
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">App Currency Converter</a>
+  </div>
+</nav>
+<section class="container">
+  <div class="card my-4 shadow">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 my-4">
+          <label for="amount">Amount</label>
+          <input placeholder="Enter amount" id="amount" type="number" class="form-control">
+        </div>
+        <div class="col-6 my-4">
+          <label>My money</label>
+          <select class="form-control">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">EUR</option>
+          </select>
+        </div>
+        <div class="col-6 my-4">
+          <label>I want</label>
+          <select class="form-control">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">USD</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center text-white">
+          <h1>
+            <span class="badget bg-success redonded m-2">400 EUR</span>
+            <span class="badget bg-secondary m-2">IS</span>
+            <span class="badget bg-success m-2">400 EUR</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
