@@ -1,0 +1,36 @@
+<section class="container">
+  <div class="card my-4 shadow">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 my-4">
+          <label for="amount">Amount</label>
+          <input placeholder="Enter amount" [(ngModel)]="money" (input)="onConverter()" id="amount" type="number"
+            class="form-control form-control-lg">
+        </div>
+        <div class="col-6 my-4">
+          <label>My money</label>
+          <select class="form-control" name="myCurrency" [(ngModel)]="myCurrency" (change)="onConverter()">
+            <option value="" disabled selected>Choose your option</option>
+            <option *ngFor="let c of currencies" [value]="c.name">{{c.name}}</option>
+          </select>
+        </div>
+        <div class="col-6 my-4">
+          <label>I want</label>
+          <select class="form-control" name="wantCurrency" [(ngModel)]="wantCurrency" (change)="onConverter()">
+            <option value="" disabled selected>Choose your option</option>
+            <option *ngFor="let c of currencies" [value]="c.name">{{c.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center text-white" *ngIf="money">
+          <h1 class="hidden">
+            <span class="badget bg-success redonded m-2 p-2">{{ myCurrency }} {{ money  | currency  }}</span>
+            <span class="badget bg-secondary m-2 p-2">IS</span>
+            <span class="badget bg-success m-2 p-2" [title]="total | currency">{{ wantCurrency }} {{ total | currency }}</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
